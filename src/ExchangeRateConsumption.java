@@ -1,6 +1,7 @@
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 
-import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -8,8 +9,7 @@ import java.net.http.HttpResponse;
 
 public class ExchangeRateConsumption {
 
-    public String getCurrency() {
-        // HIDE KEY
+    public Currency getCurrency() {
         URI endpoint = URI.create("https://v6.exchangerate-api.com/v6/08f932f826e444eb8530f0bc/latest/USD");
 
         HttpRequest request = HttpRequest.newBuilder()
@@ -21,8 +21,11 @@ public class ExchangeRateConsumption {
                     .newHttpClient()
                     .send(request, HttpResponse.BodyHandlers.ofString());
 
-            return response.body();
-        } catch (IOException | InterruptedException e) {
+            JsonObject jsonObject = new JsonParser().parse(response.body()).getAsJsonObject();
+            String currency = String.valueOf(jsonObject.get("conversion_rates"));
+            return new Gson().fromJson(currency, Currency.class);
+
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
