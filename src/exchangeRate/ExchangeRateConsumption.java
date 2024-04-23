@@ -24,6 +24,7 @@ public class ExchangeRateConsumption {
                     .newHttpClient()
                     .send(request, HttpResponse.BodyHandlers.ofString());
 
+            // transforming Json response into JsonObject
             JsonObject jsonObject = new JsonParser().parse(response.body()).getAsJsonObject();
             String currency = String.valueOf(jsonObject.get("conversion_rates"));
             return new Gson().fromJson(currency, Currency.class);

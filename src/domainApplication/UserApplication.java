@@ -37,7 +37,7 @@ public class UserApplication {
             case 1 -> String.format(
                     "The amount %s [USD] corresponds to the final value =>>> %f [ARS]",
                     exchangeValue,
-                    exchangeCurrency.toAnotherCurrency(exchangeValue, currency.ARS()
+                    exchangeCurrency.dollarToAnotherCurrency(exchangeValue, currency.ARS()
                     )
             );
             case 2 -> String.format(
@@ -48,7 +48,7 @@ public class UserApplication {
             case 3 -> String.format(
                     "The amount %s [USD] corresponds to the final value =>>> %f [BRL]",
                     exchangeValue,
-                    exchangeCurrency.toAnotherCurrency(exchangeValue, currency.BRL())
+                    exchangeCurrency.dollarToAnotherCurrency(exchangeValue, currency.BRL())
             );
             case 4 -> String.format(
                     "The amount %s [BRL] corresponds to the final value =>>> %f [USD]",
@@ -58,7 +58,7 @@ public class UserApplication {
             case 5 -> String.format(
                     "The amount %s [USD] corresponds to the final value =>>> %f [COP]",
                     exchangeValue,
-                    exchangeCurrency.toAnotherCurrency(exchangeValue, currency.COP())
+                    exchangeCurrency.dollarToAnotherCurrency(exchangeValue, currency.COP())
             );
             case 6 -> String.format(
                     "The amount %s [COP] corresponds to the final value =>>> %f [USD]",
