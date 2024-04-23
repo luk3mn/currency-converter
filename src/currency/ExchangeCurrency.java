@@ -1,3 +1,5 @@
+package currency;
+
 public class ExchangeCurrency {
 
     public ExchangeCurrency() {

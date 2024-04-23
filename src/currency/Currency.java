@@ -1,3 +1,5 @@
+package currency;
+
 public record Currency(
         Double ARS,
         Double BOB,

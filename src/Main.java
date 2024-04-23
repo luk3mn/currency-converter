@@ -1,3 +1,8 @@
+import currency.Currency;
+import currency.ExchangeCurrency;
+import domainApplication.UserApplication;
+import exchangeRate.ExchangeRateConsumption;
+
 import java.util.Scanner;
 
 public class Main {
@@ -5,78 +10,37 @@ public class Main {
 
         ExchangeRateConsumption exchangeRateConsumption = new ExchangeRateConsumption();
         Currency currency = exchangeRateConsumption.getCurrency();
-
-
         ExchangeCurrency exchangeCurrency = new ExchangeCurrency();
+
+
+        UserApplication userApplication = new UserApplication(exchangeCurrency, currency);
         Scanner scannerOption = new Scanner(System.in);
         Scanner scannerValue = new Scanner(System.in);
 
-        String option = "";
-        String finalResult = "";
         while(true) {
 
-            System.out.println("""
-            ****************************************
-            Welcome to exchange currency
+            userApplication.showOption();
+            Integer option = scannerOption.nextInt();
 
-            1) Dollar =>> Argentine Peso
-            2) Argentine Peso =>> Dollar
-            3) Dollar =>> Brazilian Real
-            4) Brazilian Real =>> Dollar
-            5) Dollar =>> Colombian Peso
-            6) Colombian Peso =>> Dollar
-            7) Exit
-
-            Choose a valid option:
-            *****************************************
-            """);
-
-            option = scannerOption.nextLine();
-
-            if (option.equals("7")) {
+            if (option.equals(7)) {
                 System.out.println("Exit ..........");
                 break;
+            } else if (option > 7) {
+                System.out.println("""
+                
+                ************************************
+                *** This option is not available ***
+                ************************************
+                
+                """);
+            } else {
+                System.out.println("Place the value you want to convert: ");
+                String exchangeValue = scannerValue.nextLine();
+                userApplication.chooseOption(option, exchangeValue);
+
+                System.out.println(userApplication.getFinalResult());
             }
 
-            System.out.println("Place the value you want to convert: ");
-            String exchangeValue = scannerValue.nextLine();
-
-            finalResult = switch (option) {
-                case "1" -> String.format(
-                        "The amount %s [USD] corresponds to the final value =>>> %f [ARS]",
-                        exchangeValue,
-                        exchangeCurrency.toAnotherCurrency(exchangeValue, currency.ARS()
-                        )
-                );
-                case "2" -> String.format(
-                        "The amount %s [ARS] corresponds to the final value =>>> %f [USD]",
-                        exchangeValue,
-                        exchangeCurrency.toDollar(exchangeValue, currency.ARS())
-                );
-                case "3" -> String.format(
-                        "The amount %s [USD] corresponds to the final value =>>> %f [BRL]",
-                        exchangeValue,
-                        exchangeCurrency.toAnotherCurrency(exchangeValue, currency.BRL())
-                );
-                case "4" -> String.format(
-                        "The amount %s [BRL] corresponds to the final value =>>> %f [USD]",
-                        exchangeValue,
-                        exchangeCurrency.toDollar(exchangeValue, currency.BRL())
-                );
-                case "5" -> String.format(
-                        "The amount %s [USD] corresponds to the final value =>>> %f [COP]",
-                        exchangeValue,
-                        exchangeCurrency.toAnotherCurrency(exchangeValue, currency.COP())
-                );
-                case "6" -> String.format(
-                        "The amount %s [COP] corresponds to the final value =>>> %f [USD]",
-                        exchangeValue,
-                        exchangeCurrency.toDollar(exchangeValue, currency.COP())
-                );
-                default -> finalResult;
-            };
-
-            System.out.println(finalResult);
         }
     }
 }
