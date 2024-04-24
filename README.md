@@ -15,7 +15,7 @@
 <br />
 <div align="center">
    <a href="https://github.com/luk3mn/spotify-profile">
-    <img width="80" src="icon.png">
+    <img width="280" src="Badge-Conversor.png">
   </a>
 
   <h3 align="center">Currency Converter</h3>
