@@ -6,9 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="02ef1fd1-1d49-499e-96e0-4ccdc164fb40" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/currency/ExchangeCurrency.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/currency/ExchangeCurrency.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domainApplication/UserApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domainApplication/UserApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exchangeRate/ExchangeRateConsumption.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exchangeRate/ExchangeRateConsumption.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +47,11 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Application" />
