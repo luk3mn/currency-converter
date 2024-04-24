@@ -8,14 +8,14 @@
 [![personal][personal-shield]][personal-url]
 [![Issues][issues-shield]][issues-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
-![Badge em Desenvolvimento](https://img.shields.io/static/v1?label=STATUS&message=Develoment&color=GREEN&style=for-the-badge)
+![Badge em Desenvolvimento](https://img.shields.io/static/v1?label=STATUS&message=Finished&color=GREEN&style=for-the-badge)
 
 <!-- PROJECT LOGO -->
 
 <br />
 <div align="center">
    <a href="https://github.com/luk3mn/spotify-profile">
-    <img width="280" src="Badge-Conversor.png">
+    <img width="240" src="Badge-Conversor.png">
   </a>
 
   <h3 align="center">Currency Converter</h3>
