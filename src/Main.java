@@ -22,10 +22,10 @@ public class Main {
             userApplication.showOption();
             Integer option = scannerOption.nextInt();
 
-            if (option.equals(7)) {
+            if (option.equals(0)) {
                 System.out.println("Exit ..........");
                 break;
-            } else if (option > 7) {
+            } else if (option > 8) {
                 System.out.println("""
                 
                 ************************************

@@ -25,7 +25,9 @@ public class UserApplication {
         4) Brazilian Real =>> Dollar
         5) Dollar =>> Colombian Peso
         6) Colombian Peso =>> Dollar
-        7) Exit
+        7) Dollar =>> Chilean Peso
+        8) Chilean Peso =>> Dollar
+        0) Exit
 
         Choose a valid option:
         *****************************************
@@ -64,6 +66,16 @@ public class UserApplication {
                     "The amount %s [COP] corresponds to the final value =>>> %f [USD]",
                     exchangeValue,
                     exchangeCurrency.toDollar(exchangeValue, currency.COP())
+            );
+            case 7 -> String.format(
+                    "The amount %s [USD] corresponds to the final value =>>> %f [CLP]",
+                    exchangeValue,
+                    exchangeCurrency.dollarToAnotherCurrency(exchangeValue, currency.CLP())
+            );
+            case 8 -> String.format(
+                    "The amount %s [CLP] corresponds to the final value =>>> %f [USD]",
+                    exchangeValue,
+                    exchangeCurrency.toDollar(exchangeValue, currency.CLP())
             );
             default -> finalResult;
         };
